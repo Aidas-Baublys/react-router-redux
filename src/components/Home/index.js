@@ -1,9 +1,12 @@
+import { useState } from "react";
+
 function Home() {
-  const onClick = () => console.log("Fuck yeah!");
+  const [yeah, setYeah] = useState("");
+  const onClick = () => setYeah("Fuck yeah!");
 
   return (
     <div className="home">
-      <h2>Home</h2>
+      <h2>Home {yeah}</h2>
       <button onClick={onClick}>Oh, yeah...</button>
     </div>
   );
