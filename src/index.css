@@ -8,12 +8,15 @@
 .App {
   background: #8d0052;
   min-height: 100vh;
-  text-align: center;
 }
 
 .content {
   background-color: #001849;
   color: white;
+}
+
+.content h1 {
+  margin-left: 20px;
 }
 
 
@@ -43,5 +46,20 @@
 /* #### Home #### */
 
 .home {
+  margin: 20px;
+}
 
+
+/* #### BlogList #### */
+
+.blog {
+  margin: 20px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog:hover {
+  background: rgb(49, 99, 0);
+  box-shadow: 1px 3px 5px rgb(255, 0, 0);
 }
