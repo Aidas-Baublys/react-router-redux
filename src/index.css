@@ -69,7 +69,29 @@ a {
 
 /* #### Create #### */
 
+.create {
+  margin: 20px;
+}
 
+.create form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create label {
+  width: 100%;
+}
+
+.create input {
+  width: 100%;
+}
+
+.create textarea {
+  width: 100%;
+}
 
 
 /* #### Blog #### */
@@ -80,4 +102,12 @@ a {
 
 .blog article {
   margin: 20px;
+}
+
+.blog h3 {
+  margin: 10px 0;
+}
+
+.blog p {
+  margin: 10px 0;
 }

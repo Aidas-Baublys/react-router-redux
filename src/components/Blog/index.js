@@ -5,7 +5,6 @@ import useFetch from './../../hooks/useFetch';
 function Blog() {
   const { id } = useParams();
   const { payload: blog, error, loading } = useFetch("http://localhost:8000/blogs/" + id);
-  console.log(blog);
 
   return (
     <div className="blog">
