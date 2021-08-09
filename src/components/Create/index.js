@@ -1,14 +1,31 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 
 function Create() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [blog, setBlog] = useState("");
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+
+  const onSubmit = e => {
+    setLoading(true);
+    e.preventDefault();
+    const data = { title, body: blog, author };
+    fetch("http://localhost:8000/blogs/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }).then(() => {
+      setLoading(false);
+      history.push("/");
+    });
+  };
 
   return (
     <div className="create">
       <h2>Create page</h2>
-      <form>
+      <form onSubmit={onSubmit}>
         <label>
           Title
           <input
@@ -35,7 +52,10 @@ function Create() {
             onChange={e => setBlog(e.target.value)}
           />
         </label>
-        <button type="submit">Add blog</button>
+        {loading
+          ? <button disabled>Adding...</button>
+          : <button type="submit">Add blog</button>
+        }
       </form>
     </div>
   );

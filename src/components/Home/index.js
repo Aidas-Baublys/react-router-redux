@@ -2,7 +2,7 @@ import BlogList from './../BlogList';
 import useFetch from './../../hooks/useFetch';
 
 function Home() {
-  const { payload: blogs, error, loading } = useFetch("http://localhost:8000/blogs");
+  const { payload: blogs = [], error, loading } = useFetch("http://localhost:8000/blogs");
 
   return (
     <section className="home">
